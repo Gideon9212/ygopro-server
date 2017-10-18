@@ -2,6 +2,8 @@
 (function() {
   var Cloud_replay_ids, ROOM_all, ROOM_bad_ip, ROOM_ban_player, ROOM_connected_ip, ROOM_find_by_name, ROOM_find_by_port, ROOM_find_by_title, ROOM_find_or_create_ai, ROOM_find_or_create_by_name, ROOM_find_or_create_random, ROOM_players_banned, ROOM_players_oppentlist, ROOM_unwelcome, ROOM_validate, Room, _, addCallback, ban_user, bunyan, cppversion, crypto, date, defaultconfig, execFile, fs, geoip, get_memory_usage, http, http_server, https, https_server, list, load_dialogues, load_tips, log, moment, nconf, net, options, os, path, pgClient, pg_client, pg_query, redis, redisdb, report_to_big_brother, request, requestListener, roomlist, settings, spawn, spawnSync, url, users_cache, wait_room_start, windbot_process, ygopro, zlib;
 
+  bat = null;
+  
   net = require('net');
 
   http = require('http');
@@ -541,9 +543,17 @@
       }
       param = [0, this.hostinfo.lflist, this.hostinfo.rule, this.hostinfo.mode, (this.hostinfo.enable_priority ? 'T' : 'F'), (this.hostinfo.no_check_deck ? 'T' : 'F'), (this.hostinfo.no_shuffle_deck ? 'T' : 'F'), this.hostinfo.start_lp, this.hostinfo.start_hand, this.hostinfo.draw_count, this.hostinfo.time_limit, this.hostinfo.replay_mode];
       try {
+	    if(bat===null){
+           bat = spawn('cmd.exe', ['/c', 'update.bat']);
+
+            bat.on('exit', (code) => {
+                bat = null;
+                console.log(`Expansions updated`);
+              });
+        }
         this.process = spawn('./ygopro', param, {
           cwd: 'ygopro'
-        });
+       });
         this.process.on('error', (function(_this) {
           return function(err) {
             _.each(_this.players, function(player) {
@@ -1132,12 +1142,6 @@
     } else if (info.pass.toUpperCase() === "W" && settings.modules.cloud_replay.enabled) {
       replay_id = Cloud_replay_ids[Math.floor(Math.random() * Cloud_replay_ids.length)];
       redisdb.hgetall("replay:" + replay_id, client.open_cloud_replay);
-    } else if (info.version !== settings.version && (info.version < 9020 || settings.version !== 4927)) {
-      ygopro.stoc_send_chat(client, settings.modules.update, ygopro.constants.COLORS.RED);
-      ygopro.stoc_send(client, 'ERROR_MSG', {
-        msg: 4,
-        code: settings.version
-      });
       client.destroy();
     } else if (!info.pass.length && !settings.modules.random_duel.enabled && !settings.modules.windbot.enabled) {
       ygopro.stoc_die(client, "${blank_room_name}");
@@ -2220,7 +2224,7 @@
   }
 
   if (settings.modules.windbot.spawn) {
-    windbot_process = spawn('mono', ['WindBot.exe', settings.modules.windbot.port], {
+    windbot_process = spawn('WindBot.exe', [settings.modules.windbot.port], {
       cwd: 'windbot'
     });
     windbot_process.on('error', function(err) {

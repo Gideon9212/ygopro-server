@@ -1,9 +1,9 @@
 {
   "port": 7911,
-  "version": 4924,
+  "version": 4930,
   "hostinfo": {
     "lflist": 0,
-    "rule": 0,
+    "rule": 2,
     "mode": 0,
     "comment": "rule: 0=OCGONLY, 1=TCGONLY, 2=OT; mode: 0=SINGLE, 1=MATCH, 2=TAG",
     "enable_priority": false,
@@ -12,15 +12,15 @@
     "start_lp": 8000,
     "start_hand": 5,
     "draw_count": 1,
-    "time_limit": 180
+    "time_limit": 360
   },
   "modules": {
-    "welcome": "MyCard YGOPro Server",
-    "update": "请更新游戏版本",
+    "welcome": "Welcome To Gideon's Beta Ygopro Server.",
+    "update": "Version mismatch.",
     "stop": false,
     "i18n": {
       "auto_pick": false,
-      "default": "zh-cn",
+      "default": "en-us",
       "fallback": "en-us",
       "map": {
         "CN": "zh-cn",
@@ -36,11 +36,11 @@
     },
     "dialogues": {
       "enabled": true,
-      "get": "http://mercury233.me/ygosrv233/dialogues.json"
+      "get": false
     },
     "random_duel": {
-      "enabled": false,
-      "hang_timeout": 90
+      "enabled": true,
+      "hang_timeout": 180
     },
     "cloud_replay": {
       "enabled": false,
@@ -48,9 +48,9 @@
       "enable_halfway_watch": true
     },
     "windbot": {
-      "enabled": false,
+      "enabled": true,
       "botlist": "./windbot/bots.json",
-      "spawn": false,
+      "spawn": true,
       "port": 2399
     },
     "mycard": {
@@ -67,10 +67,10 @@
       "arena": "233"
     },
     "big_brother": {
-      "enabled": false,
-      "accesskey": "233",
-      "post": "https://api.mycard.moe/ygopro/big-brother"
-    },
+       "enabled": false,
+       "accesskey": "233",
+       "post": "https://api.mycard.moe/ygopro/big-brother"
+     },
     "arena_mode": {
       "enabled": false,
       "mode": "entertain",
@@ -100,14 +100,6 @@
       "db_path": "../ygopro-pre-data/unofficial/",
       "html_img_rel_path": "pre/pics/",
       "html_img_thumbnail": "thumbnail/",
-      "cdn": {
-        "enabled": false,
-        "exe": "upx",
-        "params": ["sync"],
-        "local": "./ygosrv233",
-        "remote": "/ygosrv233",
-        "pics_remote": "/ygopro/"
-      },
       "ygopro_path": "../ygopro-pre/",
       "only_show_dbs": {
         "news.cdb": true,
@@ -148,15 +140,27 @@
     "spam_word": ["——"]
   },
   "tips": [
-    "欢迎来到本服务器",
-    "本服务器使用萌卡代码搭建"
+    "Monster's that were not correctly summoned cannot be SS back.",
+    "Hold left click to manually activate something.",
+	"MST does not negate.",
+	"Hanewata can be a good side pick vs burn heavy decks.",
+	"You cannot use Ultra Polymerization's 2nd effect on Starving Venom Fusion Dragon",
+	"Pay attention to costs (;), they don't trigger Shaddolls or Dark Worlds.",
+	"Monster's that are xyz material are not considered on the field and they don't count as leaving the field when used for a xyz summon.",
+	"Pendulum's go to the extra deck if they been on the field. If they get destroyed before hand (example solemn) they go to the GY instead.",
+	"Pay attention to your LP. You might pay LP equal to your LP, thus making you lose the game.",
+	"Effects worded (When..., you can...), only work if their condition was the last thing to happen.",
+	"You can't activate Solemn Strike while a card effect, including Polymerization, is resolving.",
+	"Discarding, destroying, sending, banishing, overlaying, attaching, and tributing cards are all different things.",
+	"Archetypes, denoted by quotes, are not card types - you can't make Z-ARC with the Magicians, except with the Sorcerors, who can't use random Dragons.",
+	"Do not accept an opponent's handshake when your opponent uses Yu-Jo Friendship and you have more LP. (Or if their hand is dirty)",
+	"Do not Summon Sanwitch using Sangan and Witch of the Black Forest in your hand, you would waste their effects that way.",
+	"In the great words of Crimson Jake: When all else fails, play Dimensional Barrier.",
+	"Reading effects is the key to winning."
   ],
   "dialogues": {
     "46986414": [
-      "出来吧，我最强的仆人，黑魔导！"
-    ],
-    "58481572": [
-      "我们来做朋友吧！"
+      "With no cards on the field, I summon Dark Magician and attack directly!"
     ]
   }
 }

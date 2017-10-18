@@ -1,0 +1,79 @@
+{
+  "dialogues": {
+    "36996508": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986414": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986415": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986416": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986417": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986418": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986419": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "46986420": [
+      "With no cards on the field, I summon Dark Magician and attack directly!"
+    ],
+    "89631139": [
+      "Screw the rules, I have money!"
+    ],
+    "89631140": [
+      "Screw the rules, I have money!"
+    ],
+    "89631141": [
+      "Screw the rules, I have money!"
+    ],
+    "89631142": [
+      "Screw the rules, I have money!"
+    ],
+    "89631143": [
+      "Screw the rules, I have money!"
+    ],
+    "89631144": [
+      "Screw the rules, I have money!"
+    ],
+    "89631145": [
+      "Screw the rules, I have money!"
+    ],
+    "89631146": [
+      "Screw the rules, I have money!"
+    ],
+    "90809975": [
+      "Like, Toadally Awesome dude."
+    ]
+  },
+  "version": 9021,
+  "modules": {
+    "tournament_mode": {
+      "duel_log": [
+        {
+          "time": "2017-06-28 12:31:20",
+          "name": "S,RANDOM#88593",
+          "roomid": "54071",
+          "cloud_replay_id": "R#16280506",
+          "replay_filename": "2017-06-28 12:31:20 Gideon VS Gideon.yrp",
+          "players": [
+            {
+              "name": "Gideon",
+              "winner": true
+            },
+            {
+              "name": "Gideon",
+              "winner": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
