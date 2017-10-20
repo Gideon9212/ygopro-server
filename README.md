@@ -1,53 +1,47 @@
-## ygopro-server
-一个YGOPro服务器。
+A YGOPro server.
 
-现用于[萌卡](https://mycard.moe/)和[YGOPRO 233服](http://mercury233.me/ygosrv233/)。
+Is now used in [swallow card] (https://mycard.moe/) and [YGOPRO 233 service] (http://mercury233.me/ygosrv233/).
 
-### 支持功能
-* Linux上运行
-* Windows上运行
-* 玩家输入同一房名约战
-* 玩家不指定房间名，自动匹配在线玩家
-* 房间列表json
-* 广播消息
-* 召唤台词
-* 先行卡一键更新
-* Windbot在线AI
-* 萌卡用户登陆
+### Current functions
+* Run on Linux
+* Run on Windows
+* Players enter the same room name.
+* Players do not specify the room name. Automatically matchs the online players
+* Room list json
+* Broadcast messages
+* Summon messages
+* Windbot Online AI
 
-### 不支持功能
-* 在线聊天室
+### Currently does not support
+* Online chat room
 
-### 使用方法
-* 可参考[wiki](https://github.com/mercury233/ygopro-server/wiki)安装
-* 手动安装：
-  * 安装修改后的YGOPro服务端：https://github.com/mycard/ygopro/tree/server
-  * `git clone https://github.com/mycard/ygopro-server.git`
+### Instructions
+* Refer to [wiki] (https://github.com/mercury233/ygopro-server/wiki) to install (Currently a work in progress)
+* Manual installation:
+  * Install the modified YGOPro server: https: //github.com/mycard/ygopro/tree/server
+  * `git clone https: // github.com / mycard / ygopro-server.git`
   * `cd ygopro-server`
   * `npm install`
-* 将`config.json`复制为`config.user.json`并进行修改
-  * `port`为你想要的端口
-  * `modules.stop`为文本时，表示服务器关闭
-  * ~~更多选项参见wiki~~
-* `node ygopro-server.js`即可运行
-* 简易的控制台在 http://mercury233.me/ygosrv233/dashboard.html
+* Copy `config.json` to` config.user.json` and make changes
+  * `port` for the port you want
+  * `modules.stop` is text when the server is closed
+  * ~ ~ More options see wiki ~ ~
+* `node ygopro-server.js` to run
+* Easy console at http://mercury233.me/ygosrv233/dashboard.html
 
-### 高级功能
-* 待补充说明
-* 简易的先行卡更新控制台在 http://mercury233.me/ygosrv233/pre-dashboard.html
+### Advanced features
+* To be added
+* Easy advance card update console at http://mercury233.me/ygosrv233/pre-dashboard.html (See moecube's github)
 
-### 开发计划
-* 重做CTOS和STOC部分
-* 模块化附加功能
-  * 房名代码
-  * 随机对战
-  * 召唤台词
+### Development Plan
+* Redo the CTOS and STOC sections
+* Modular addition function
+  * Room name code
+  * Random Battle
+  * Summon lines
   * WindBot
-  * 云录像
-  * 比赛模式
-  * 先行卡更新
-* 用户账号系统和管理员账号系统
-* 云录像更换存储方式
+* User account system and administrator account system
+* Cloud video replacement storage mode
 
 ### TODO
 * refactoring CTOS and STOC
@@ -55,9 +49,9 @@
   * room name parsing
   * random duel
   * summon dialogues
-  * WindBot
+  * WindBot (To make it more stable)
   * cloud replay
   * tournament mode
-  * expansions updater
+  * expansions updater (I have this but not moecube)
 * user and admin account system
 * new database for cloud replay
