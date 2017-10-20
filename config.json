@@ -1,5 +1,5 @@
 {
-  "port": 7911,
+  "port": 8000,
   "version": 4930,
   "hostinfo": {
     "lflist": 0,
@@ -15,7 +15,7 @@
     "time_limit": 360
   },
   "modules": {
-    "welcome": "Welcome To Gideon's Beta Ygopro Server.",
+    "welcome": "Welcome To Everest, universal ranking server for YGOPro!",
     "update": "Version mismatch.",
     "stop": false,
     "i18n": {

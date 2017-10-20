@@ -2,31 +2,11 @@
 <html>
     <head>
         <title>Discord Token Generator</title>
-        <style>
-          .container {
-            display: flex;
-            width: 100%;
-            padding: 40px 0;
-            align-items: center;
-            justify-content: center;
-          }
-          
-          .container a {
-            background: #7289DA;
-            padding: 0 20px;
-            line-height: 35px;
-            color: #fff;
-            font-family: 'Helvetica', 'Arial', sans-sefir;
-            font-size: 20px;
-            display: block;
-            text-decoration: none;
-            border-radius: 3px;
-          }
-        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="/static/css/styles.css" />
     </head>
     <body>
-        <div class="container">
-          <a href="/api/discord/login">Login through discord</a>
-        </div>
+        <div id="app" style="width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center;"></div>
+        <script src="/static/js/bundle.js"></script>
     </body>
 </html>

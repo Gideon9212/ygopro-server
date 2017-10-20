@@ -1,8 +1,11 @@
+/**
+ * Created by orel- on 15/May/17.
+ */
+
 const express = require('express');
 const fetch = require('node-fetch');
 const btoa = require('btoa');
-const { catchAsync } = require('../utils');
-const express = require('express');
+const {catchAsync} = require('../utils');
 
 const router = express.Router();
 
@@ -13,8 +16,6 @@ const redirect = encodeURIComponent('http://localhost:50451/api/discord/callback
 router.get('/login', (req, res) => {
   res.redirect(`https://discordapp.com/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`);
 });
-
-module.exports = router;
 
 router.get('/callback', catchAsync(async (req, res) => {
   if (!req.query.code) throw new Error('NoCodeProvided');
@@ -30,3 +31,5 @@ router.get('/callback', catchAsync(async (req, res) => {
   const json = await response.json();
   res.redirect(`/?token=${json.access_token}`);
 }));
+
+module.exports = router;
