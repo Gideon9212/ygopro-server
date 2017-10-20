@@ -5,7 +5,11 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const btoa = require('btoa');
+<<<<<<< HEAD
 const {catchAsync} = require('../utils');
+=======
+const { catchAsync } = require('../utils');
+>>>>>>> origin/master
 
 const router = express.Router();
 
@@ -31,5 +35,8 @@ router.get('/callback', catchAsync(async (req, res) => {
   const json = await response.json();
   res.redirect(`/?token=${json.access_token}`);
 }));
+<<<<<<< HEAD
 
 module.exports = router;
+=======
+>>>>>>> origin/master
