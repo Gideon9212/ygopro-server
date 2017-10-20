@@ -1,25 +1,47 @@
 {
-  "name": "ygopro-server",
-  "version": "2.3.3",
-  "description": "a server for ygopro",
-  "repository": "github:mycard/ygopro-server",
-  "keywords": [
-    "mycard",
-    "ygopro",
-    "server"
-  ],
-  "author": "zh99998 <zh99998@gmail.com>, mercury233 <me@mercury233.me>",
-  "dependencies": {
-    "bunyan": "latest",
-    "moment": "latest",
-    "nconf": "latest",
-    "passport-discord": "^0.1.2",
-    "request": "latest",
-    "underscore": "latest",
-    "underscore.string": "latest"
-  },
-  "license": "AGPL-3.0",
+  "name": "discord-token-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node ygopro-server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orels1/discord-token-generator.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "discord"
+  ],
+  "author": "orels1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orels1/discord-token-generator/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "webpack": "^2.5.1"
+  },
+  "homepage": "https://github.com/orels1/discord-token-generator#readme",
+  "dependencies": {
+    "btoa": "^1.1.2",
+    "express": "^4.15.2",
+    "node-fetch": "^1.6.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }
