@@ -548,7 +548,6 @@
 
             bat.on('exit', (code) => {
                 bat = null;
-                console.log(`Expansions updated`);
               });
         }
         this.process = spawn('./ygopro', param, {
