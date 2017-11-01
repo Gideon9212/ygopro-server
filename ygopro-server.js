@@ -2241,7 +2241,7 @@ exports = module.exports = function(write,write2){
     });
     windbot_process.stderr.setEncoding('utf8');
     windbot_process.stderr.on('data', function(data) {
-      write.("WindBot Error: "+ data);
+      write("WindBot Error: "+ data);
       log.warn('WindBot Error:', data);
     });
   }
