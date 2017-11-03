@@ -1,6 +1,5 @@
 var Discord = require('discord.io');
 var fs = require('fs');
-var server = require("./ygopro-server.js")
 
 var controlersids = fs.readFileSync('controlers.txt', 'utf8');
 var controlers = controlersids.split("\n");
@@ -19,13 +18,13 @@ for (let i = channels.length; i > -1; i--){
 }
   
   var bot = new Discord.Client({
-	token: "",
+	token: "Add token here",
 	autorun: true
   });
   
   bot.on('ready',function(){
     console.log('Logged in as %s - %s\n', bot.username, bot.id);
-    server.start();
+    require("./ygopro-server.js")(write,write2);
 });
 
 	bot.on('message',function(user, userID, channelID, message, event){
@@ -134,13 +133,6 @@ for (let i = channels.length; i > -1; i--){
 					message: "this channel wasn't used for logging"
 					}, function(err, res){ if (err) { console.log(err); } return res});
 				}
-			}
-			if(message===".restartai") {
-				server.restartAI();
-				bot.sendMessage({
-				to: channelID,
-				message: "ai restarted"
-				}, function(err, res){ if (err) { console.log(err); } return res});
 			}
 		}
 	});
