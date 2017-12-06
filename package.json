@@ -14,7 +14,7 @@
     "moment": "latest",
     "nconf": "latest",
     "passport-discord": "^0.1.2",
-    "discord.io": "latest",
+    "discord.io": "github:woor/discord.io#gateway_v6",
     "request": "latest",
     "underscore": "latest",
     "underscore.string": "latest"
