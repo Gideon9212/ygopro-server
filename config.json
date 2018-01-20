@@ -40,6 +40,7 @@
     },
     "random_duel": {
       "enabled": true,
+      "no_rematch_check": false,
       "hang_timeout": 180
     },
     "cloud_replay": {
@@ -89,6 +90,11 @@
       "password": "123456",
       "port": 7933
     },
+    "test_mode": {
+      "watch_public_hand": false,
+      "no_connect_count_limit": false,
+      "no_ban_player": false
+    },
     "pre_util": {
       "enabled": false,
       "port": 7944,
@@ -100,6 +106,15 @@
       "db_path": "../ygopro-pre-data/unofficial/",
       "html_img_rel_path": "pre/pics/",
       "html_img_thumbnail": "thumbnail/",
+      "html_img_thumbnail_suffix": "!thumb",
+      "cdn": {
+        "enabled": false,
+        "exe": "upx",
+        "params": ["sync"],
+        "local": "./ygosrv233",
+        "remote": "/ygosrv233",
+        "pics_remote": "/ygopro/"
+      },
       "ygopro_path": "../ygopro-pre/",
       "only_show_dbs": {
         "news.cdb": true,
