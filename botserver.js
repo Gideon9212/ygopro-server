@@ -19,7 +19,7 @@ for (let i = channels.length; i > -1; i--){
 }
   
   var bot = new Discord.Client({
-	token: "MzUyMDc3MzYzNDE4NDk3MDI5.DIb5Gw.H9IXPUgR-Jvp76ONrJTxmIMbfGM",
+	token: "",
 	autorun: true
   });
   
