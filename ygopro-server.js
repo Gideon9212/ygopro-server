@@ -4,9 +4,20 @@
   var Cloud_replay_ids, ROOM_all, ROOM_bad_ip, ROOM_ban_player, ROOM_connected_ip, ROOM_find_by_name, ROOM_find_by_port, ROOM_find_by_title, ROOM_find_or_create_ai, ROOM_find_or_create_by_name, ROOM_find_or_create_random, ROOM_players_banned, ROOM_players_oppentlist, ROOM_unwelcome, ROOM_validate, Room, _, addCallback, ban_user, bunyan, cppversion, crypto, date, defaultconfig, execFile, fs, geoip, get_memory_usage, http, http_server, https, https_server, list, load_dialogues, load_tips, log, moment, nconf, net, options, os, path, pgClient, pg_client, pg_query, redis, redisdb, report_to_big_brother, request, requestListener, roomlist, settings, spawn, spawnSync, url, users_cache, wait_room_start, wait_room_start_arena, windbot_bin, windbot_parameters, windbot_process, ygopro, zlib;
   var server = {};
  
-server.restartAI = function (){
-	windbot_process.kill('SIGINT');
-	windbot_process = spawn('WindBot.exe', [settings.modules.windbot.port], {
+server.startAI = function (restart = false){
+	if(restart){
+		windbot_process.kill('SIGINT');
+	}
+	if (/^win/.test(process.platform)) {
+      windbot_bin = 'WindBot.exe';
+      windbot_parameters = [];
+    } else {
+      windbot_bin = 'mono';
+      windbot_parameters = ['WindBot.exe'];
+    }
+    windbot_parameters.push('ServerMode=true');
+    windbot_parameters.push('ServerPort=' + settings.modules.windbot.port);
+    windbot_process = spawn(windbot_bin, windbot_parameters, {
       cwd: 'windbot'
     });
     windbot_process.on('error', function(err) {
@@ -2324,25 +2335,7 @@ server.start = function() {
   }
 
   if (settings.modules.windbot.spawn) {
-    windbot_process = spawn('WindBot.exe', [settings.modules.windbot.port], {
-      cwd: 'windbot'
-    });
-    windbot_process.on('error', function(err) {
-      write('WindBot ERROR '+ err);
-      log.warn('WindBot ERROR', err);
-    });
-    windbot_process.on('exit', function(code) {
-      log.warn('WindBot EXIT', code);
-    });
-    windbot_process.stdout.setEncoding('utf8');
-    windbot_process.stdout.on('data', function(data) {
-      log.info('WindBot:', data);
-    });
-    windbot_process.stderr.setEncoding('utf8');
-    windbot_process.stderr.on('data', function(data) {
-      write("WindBot Error: "+ data);
-      log.warn('WindBot Error:', data);
-    });
+    server.startAI()
   }
 
   if (settings.modules.http) {

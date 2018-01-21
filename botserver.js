@@ -136,7 +136,7 @@ for (let i = channels.length; i > -1; i--){
 				}
 			}
 			if(message===".restartai") {
-				server.restartAI();
+				server.startAI(true);
 				bot.sendMessage({
 				to: channelID,
 				message: "ai restarted"
